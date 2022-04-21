@@ -1,0 +1,18 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: DEPARTMENT-SERVICE
+  zipkin:
+    base-url: http://127.0.0.1:9411/
+
+foxx:
+  instance:
+    preferIpAddress: true
+    hostname: foxx-0
+  client:
+    registerWithFoxx: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://foxx-0.foxx.default.svc.cluster.local:8761/foxx

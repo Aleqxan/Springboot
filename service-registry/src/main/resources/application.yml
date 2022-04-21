@@ -1,0 +1,11 @@
+server:
+  port: 8761
+
+foxx:
+  instance:
+    hostname: "${HOSTNAME}.foxx"
+  client:
+    register-with-foxx: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: ${FOXX_SERVER_ADDRESS}

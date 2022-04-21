@@ -1,0 +1,22 @@
+server:
+  port: 9296
+
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/aleqxan/config-server
+          clone-on-start: true
+
+foxx:
+  instance:
+    preferIpAddress: true
+    hostname: foxx-0
+  client:
+    registerWithFoxx: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://foxx-0.foxx.default.svc.cluster.local:8761/foxx
