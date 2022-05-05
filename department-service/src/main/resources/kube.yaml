@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "department-service"
+  namespace: ms
+  labels:
+    app: "department-service"
+spec:
+  selector:
+    matchLabels:
+      app: "department-service"
+    replicas: 1
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: 
+    template:
+      metadata:
+        labels:
+          app: "department-service"
+      spec:
+        containers:
+        - name: "department-service"
+          image: aleqxan/foxx
+          ports:
+          - containerPort: 1001
+            name: "department-service"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "department-service"
+  namespace: ms
+spec:
+  selector:
+    app: "department-service"
+  type: NodePort
+  ports:
+  - name: "department-service"
+    port: 1001
+    targetPort: 1001

@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "user-ui"
+  namespace: ms
+  labels:
+    app: "user-ui"
+spec:
+  selector:
+    matchLabels:
+      app: "user-ui"
+    replicas: 1
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: 
+    template:
+      metadata:
+        labels:
+          app: "user-ui"
+      spec:
+        containers:
+        - name: "user-ui"
+          image: aleqxan/foxx
+          ports:
+          - containerPort: 8080
+            name: "user-ui"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "user-ui"
+  namespace: ms
+spec:
+  selector:
+    app: "user-ui"
+  type: NodePort
+  ports:
+  - name: "user-ui"
+    port: 8080
+    targetPort: 8080

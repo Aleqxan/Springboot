@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "cloud-config"
+  namespace: ms
+  labels:
+    app: "cloud-config"
+spec:
+  selector:
+    matchLabels:
+      app: "cloud-config"
+    replicas: 1
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: 
+    template:
+      metadata:
+        labels:
+          app: "cloud-config"
+      spec:
+        containers:
+        - name: "cloud-config"
+          image: aleqxan/foxx
+          ports:
+          - containerPort: 1004
+            name: "cloud-config"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "cloud-config-service"
+  namespace: ms
+spec:
+  selector:
+    app: "cloud-config"
+  type: NodePort
+  ports:
+  - name: "cloud-config-service"
+    port: 1004
+    targetPort: 1004

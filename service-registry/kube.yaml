@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "service-registry"
+  namespace: ms
+  labels:
+    app: "service-registry"
+spec:
+  selector:
+    matchLabels:
+      app: "service-registry"
+    replicas: 1
+    strategy:
+      rollingUpdate:
+        maxSurge: 25%
+        maxUnavailable: 25%
+      type: 
+    template:
+      metadata:
+        labels:
+          app: "service-registry"
+      spec:
+        containers:
+        - name: "service-registry"
+          image: aleqxan/foxx
+          ports:
+          - containerPort: 5000
+            name: "service-registry"
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "service-registry-service"
+  namespace: ms
+spec:
+  selector:
+    app: "service-registry"
+  type: NodePort
+  ports:
+  - name: "service-registry-service"
+    port: 1003
+    
