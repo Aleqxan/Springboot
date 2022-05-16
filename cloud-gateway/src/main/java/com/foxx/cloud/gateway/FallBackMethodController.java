@@ -1,4 +1,4 @@
-package com.dailycodebuffer.cloud.gateway;
+package com.foxx.cloud.gateway;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

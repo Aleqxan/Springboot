@@ -1,4 +1,4 @@
-package com.dailycodebuffer.service.registry;
+package com.foxx.service.registry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

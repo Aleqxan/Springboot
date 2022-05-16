@@ -1,12 +1,12 @@
-package com.dailycodebuffer.cloud.gateway;
+package com.foxx.cloud.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.eureka.EnableFoxxClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 @SpringBootApplication
-@EnableEurekaClient
+@EnableFoxxClient
 @EnableHystrix
 public class CloudGatewayApplication {
 

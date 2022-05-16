@@ -1,6 +1,6 @@
-package com.dailycodebuffer.user.repository;
+package com.foxx.user.repository;
 
-import com.dailycodebuffer.user.entity.User;
+import com.foxx.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.dailycodebuffer.user.entity;
+package com.foxx.user.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

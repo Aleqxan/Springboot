@@ -1,8 +1,8 @@
-package com.dailycodebuffer.user.controller;
+package com.foxx.user.controller;
 
-import com.dailycodebuffer.user.VO.ResponseTemplateVO;
-import com.dailycodebuffer.user.entity.User;
-import com.dailycodebuffer.user.service.UserService;
+import com.foxx.user.VO.ResponseTemplateVO;
+import com.foxx.user.entity.User;
+import com.foxx.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

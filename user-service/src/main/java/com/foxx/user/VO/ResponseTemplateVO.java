@@ -1,4 +1,4 @@
-package com.dailycodebuffer.user.VO;
+package com.foxx.user.VO;
 
 import com.dailycodebuffer.user.entity.User;
 import lombok.AllArgsConstructor;
